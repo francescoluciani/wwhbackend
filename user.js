@@ -2,7 +2,7 @@ const express = require("express");
 const bcyrpt = require("bcrypt");
 const app = express();
 
-const users = [
+/*const users = [
   { username: "user1@wwh.com", password: "12345" },
   { username: "user2@wwh.com", password: "67891" },
   { username: "user3@gwwh.com", password: "98765" },
@@ -19,4 +19,4 @@ app.post("/users", (req, res) => {
   res.json(req.body);
 });
 
-app.listen(5000, () => console.log("server running on port 5000"));
+app.listen(5000, () => console.log("server running on port 5000"));*/

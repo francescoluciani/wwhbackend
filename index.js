@@ -7,16 +7,15 @@ const { userLogin } = require("./controller/userController");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use("/auth", loginroute);
+
 
 const connection = require("./db/conf");
 const transactions = require("./db/data");
+const userModels = require("./models/userModels");
 
-app.get("/", (req, res) => {
-  connection.query(`SELECT * FROM user`, (err, results, fields) => {
-    res.send(results);
-  });
-});
+app.use("/auth", loginroute)
+
+
 
 // app.post("/signup", async (req, res) => {
 //   const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -52,6 +51,8 @@ app.get("/", (req, res) => {
 //     }
 //   );
 // };
+
+
 // app.post("/login", login, (req, res, next) => {
 //   //user id will come from middleware
 //   const userId = 1;
@@ -62,6 +63,25 @@ app.get("/", (req, res) => {
 
 //send results to the next middleware,
 //access id
+
+//install cookieParser and app.use cookieParser
+// app.post("/login", (req, res, next) => {
+//   const{ username , password } = req.body;
+//   if ( user === userName && password === hashedPassword )
+//   res.status(200).cookie("login", true, { httpOnly: true }).json({ message: "welcome" });
+// });
+// const authentication = (req, res, next) => {
+//   if (req.cookies.login === "true") {
+//     console.log("user is logged in ");
+//     next();
+//   } else {
+//     res.status(401).json({ message : "wrong credentials"});
+//   }
+// };
+
+// app.get("/secret", authentication, (req, res, next) => {
+//   res.send("welcome to the secret route");
+// });
 app.listen(port, (err) => {
   if (err) throw new Error("ups something is not working");
   console.log(`Great, your server is running on port: ${port}`);

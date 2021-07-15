@@ -1,13 +1,16 @@
 const connection = require("../db/conf");
 const userModels = require("../models/userModels");
 const data = require("../db/data");
+
 const userLogin = (req, res, next) => {
-  const userName = req.body.username;
+  const userName = req.body.user;
+  console.log(userName);
   userModels.userLogin(userName, (err, results) => {
     if (err) {
       res.status(500).send("we could not find your username");
     } else {
       req.userInfo = results[0];
+      console.log(results[0]);
       next();
     }
   });

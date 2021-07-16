@@ -5,12 +5,13 @@ const port = process.env.PORT || 5000;
 const loginroute = require("./routes/loginroute");
 const { userLogin } = require("./controller/userController");
 
+const transactions = require("./db/data");
+const userModels = require("./models/userModels");
+const connection = require("./db/conf");
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const connection = require("./db/conf");
-const transactions = require("./db/data");
-const userModels = require("./models/userModels");
 
 app.use("/auth", loginroute)
 

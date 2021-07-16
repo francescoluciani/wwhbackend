@@ -10,7 +10,6 @@ app.listen(PORT, () => console.log(`server is running on ${PORT}`));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-
 const connection = require("./db/conf");
 const transactions = require("./db/data");
 const userModels = require("./models/userModels");

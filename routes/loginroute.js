@@ -4,8 +4,6 @@ const connection = require("../db/conf");
 
 const { userLogin, sendUserInfo } = require("../controller/userController");
 
-
 router.post("/login", userLogin, sendUserInfo);
-
 
 module.exports = router;

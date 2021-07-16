@@ -16,11 +16,6 @@ const userModels = require("./models/userModels");
 app.use("/auth", loginroute)
 
 
-
-// app.post("/signup", async (req, res) => {
-//   const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
-//   connection.query(
 //     `INSERT INTO user (username, password) VALUES (?, ?) `,
 //     [req.body.username, hashedPassword],
 //     (err, results, fields) => {

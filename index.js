@@ -5,6 +5,8 @@ const port = process.env.PORT || 5000;
 const loginroute = require("./routes/loginroute");
 const { userLogin } = require("./controller/userController");
 
+app.listen(PORT, () => console.log(`server is running on ${PORT}`));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

@@ -1,7 +1,7 @@
 const connection = require("../db/conf");
 const userModels = {};
 
-userModels.userLogin = (username,callback) => {
+userModels.userLogin = (username, callback) => {
   connection.query(
     `SELECT * FROM user WHERE username= ?`,
     [username],
@@ -10,6 +10,14 @@ userModels.userLogin = (username,callback) => {
     }
   );
 };
-
+// userModels.userPassword = (password, callback) => {
+//   connection.query(
+//     `SELECT * FROM user WHERE password= ?`,
+//     [password],
+//     (err, results) => {
+//       callback(err, results);
+//     }
+//   );
+// };
 
 module.exports = userModels;

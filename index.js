@@ -5,6 +5,12 @@ const port = process.env.PORT || 5000;
 const loginroute = require("./routes/loginroute");
 const { userLogin } = require("./controller/userController");
 
+app.listen(port, (err) => {
+  if (err) throw new Error("ups something is not working");
+  console.log(`Great, your server is running on port: ${port}`);
+});
+
+
 const transactions = require("./db/data");
 const userModels = require("./models/userModels");
 const connection = require("./db/conf");
@@ -76,7 +82,3 @@ app.use("/auth", loginroute)
 //   console.log(selectedUser);
 // });
 
- app.listen(port, (err) => {
-   if (err) throw new Error("ups something is not working");
-   console.log(`Great, your server is running on port: ${port}`);
- });

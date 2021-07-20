@@ -10,18 +10,18 @@ const connection = require("./db/conf");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+app.use("/auth", loginroute);
 
 app.get("/", (req, res) => res.send("Hello from /"));
 
 app.get("/users", (req, res) => {
-  connection.query("SELECT * FROM user ", (err, results) =>  {
+  connection.query("SELECT * FROM user ", (err, results) => {
     if (err) {
-      res.status(500). send("error retrieving data from db")
-  } else {
+      res.status(500).send("error retrieving data from db");
+    } else {
       res.json(results);
-  }
-  })
+    }
+  });
 });
 
 app.listen(port, (err) => {
@@ -60,10 +60,6 @@ app.listen(port, (err) => {
 //   );
 // };
 
-
-
-
-
 // app.post("/login", (req, res, next) => {
 //   const{ username , password } = req.body;
 //   if ( user === userName && password === hashedPassword )
@@ -88,4 +84,3 @@ app.listen(port, (err) => {
 //   //check if user successefull send all info of that user (app.post by id )
 //   console.log(selectedUser);
 // });
-

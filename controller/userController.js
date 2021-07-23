@@ -1,4 +1,3 @@
-const connection = require("../db/conf");
 const userModels = require("../models/userModels");
 const data = require("../db/data");
 const bcrypt = require("bcrypt");

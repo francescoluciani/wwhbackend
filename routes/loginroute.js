@@ -9,6 +9,5 @@ const {
 } = require("../controller/userController");
 
 router.post("/login", userLogin, sendUserInfo);
-// router.get("/login", userPassword);
 
 module.exports = router;

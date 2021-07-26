@@ -7,8 +7,10 @@
     "node": "10.19.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "nodemon index.js",
+  "proxy": "localhost:5000/auth/login"
+
   },
   "keywords": [],
   "author": "",

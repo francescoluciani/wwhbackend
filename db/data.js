@@ -1,6 +1,7 @@
 const data = [
   {
     id: 1,
+    username: "Juan",
     balance: 7900.07,
     spendings: [
       {
@@ -117,6 +118,7 @@ const data = [
   },
   {
     id: 2,
+    username: "Silvia",
     balance: 9900.07,
     spendings: [
       {

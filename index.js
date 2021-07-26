@@ -26,6 +26,6 @@ app.get("/users", (req, res) => {
 });
 
 app.listen(PORT, (err) => {
-  if (err) throw new Error(" something is not working");
+  if (err) throw new Error("something is not working");
   console.log(`Great, your server is running on port: ${PORT}`);
 })

@@ -1,9 +1,7 @@
 const express = require("express");
 const app = express();
-const bcrypt = require("bcrypt");
 const PORT = process.env.PORT || 5000;
 const loginroute = require("./routes/loginroute");
-const { userLogin } = require("./controller/userController");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

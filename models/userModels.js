@@ -4,16 +4,17 @@ const userModels = {};
 userModels.userLogin = (username, callback) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
+ 
+    connection.query(
+      `SELECT * FROM user WHERE username= ?`,
+      [username],
+      (err, results) => {
+        if (err) throw err;
+        callback(err, results);
+        connection.release();
+      }
+    ); 
   })
-  connection.query(
-    `SELECT * FROM user WHERE username= ?`,
-    [username],
-    (err, results) => {
-      connection.release();
-      if (err) throw err;
-      callback(err, results);
-    }
-  );
 };
 
 userModels.userSql = (user, callback) => {

@@ -16,7 +16,6 @@ const userLogin = async (req, res, next) => {
         res.send(err);
       } else {
         req.userInfo = results[0];
-
         next();
       }
     }
@@ -24,8 +23,7 @@ const userLogin = async (req, res, next) => {
 };
 
 const sendUserInfo = (req, res, next) => {
-  const userData = data.filter((user) => user.id == req.userInfo.id);
-  console.log(userData);
+  const userData = data.filter((user) => user.id == req.userInfo.iduser);
   res.json(userData);
 };
 

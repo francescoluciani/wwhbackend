@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 
 const mysql = require("mysql2");
 
@@ -9,11 +9,4 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
 });
 
-   module.exports = pool; 
-
-
-//mysql://b5773e640953d0:900d0f66@us-cdbr-east-04.cleardb.com/heroku_c89e4ed71ee48dc?reconnect=true
-
-
-
-
+module.exports = pool;

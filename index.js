@@ -1,16 +1,12 @@
 const express = require("express");
 const app = express();
-const bcrypt = require("bcrypt");
 const PORT = process.env.PORT || 5000;
 const loginroute = require("./routes/loginroute");
-const { userLogin } = require("./controller/userController");
+const connection = require("./db/conf");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const connection = require("./db/conf");
-const transactions = require("./db/data");
-const userModels = require("./models/userModels");
 
 app.get("/", (req, res) => res.send("Hello from /"));
 app.use("/auth", loginroute);

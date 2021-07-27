@@ -23,7 +23,6 @@ const userLogin = async (req, res, next) => {
   });
 };
 
-
 const sendUserInfo = (req, res, next) => {
   const userData = data.filter((user) => user.id == req.userInfo.id);
   console.log(userData);

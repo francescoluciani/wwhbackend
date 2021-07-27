@@ -1,13 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const connection = require("../db/conf");
 
 const {
   userLogin,
 
-  sendUserInfo,
+  sendUserInfo, userSql
 } = require("../controller/userController");
 
 router.post("/login", userLogin, sendUserInfo);
+router.get("/users", userSql);
 
 module.exports = router;
+
+

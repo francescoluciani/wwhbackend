@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 
 const userLogin = async (req, res, next) => {
   const userName = req.body.username;
+
   userModels.userLogin(userName, async (err, results) => {
     if (err) {
       res.status(500).send("we could not find your username");
@@ -12,6 +13,7 @@ const userLogin = async (req, res, next) => {
         req.body.password,
         results[0].password
       );
+      console.log(validPass);
       if (!validPass) {
         res.send(err);
       } else {
